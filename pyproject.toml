@@ -1,0 +1,28 @@
+[project]
+name = "web-search"
+version = "0.1.0"
+description = "A CLI tool for searching the web."
+readme = "README.md"
+authors = [
+    { name = "Paul Harrison", email = "paul@harrison.sh" }
+]
+requires-python = ">=3.10, <=3.14"
+dependencies = [
+    "pydantic>=2.13.0",
+    "typer>=0.24.1",
+]
+
+[project.scripts]
+web = "web_search.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.15.10",
+    "ty>=0.0.30",
+]
