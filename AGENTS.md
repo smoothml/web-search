@@ -50,3 +50,11 @@ Apply formatting: `uv run ruff format src tests`
 
 * Use `pydantic` for settings management and data models.
 * Use `typer` for CLI implementation.
+
+## Manual Testing
+
+You have access to a running SearXNG instance, the base URL for which is in the environment variable `SEARXNG_BASE_URL`. DO NOT use this in unit and integration tests, but you can use this for manual testing. For example, you can explore the search API responses with:
+
+```shell
+curl "$SEARXNG_BASE_URL/search?format=json&q=<search-query>" | jq '<jq-query>'
+```
